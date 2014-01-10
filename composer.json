@@ -1,6 +1,8 @@
 {
     "name": "dwolf555/api-docs-controller",
     "description": "",
+    "homepage": "https://github.com/dwolf555/ApiDocsController.git",
+    "license": "MIT",
     "authors": [
         {
             "name": "Daniel Wolf",
