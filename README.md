@@ -23,26 +23,25 @@ class UserController extends Dwolf555\ApiDocsController\ApiDocsController {
     public function index()
     {
         // For documentation
-        $content = array('message'=>'ok');
+        $this->apiDocInfo = [
+            'content' => ['message' => 'ok'],
+            'statusCode' => [200],
+            'inputs' => [
+                'limit' => 10,
+                'offset' => 0
+            ],
+            'errors' => [
+                'limit' => 'Limit must be a valid integer.',
+                'offset' => 'Limit must be a valid integer.',
+            ]
+        ];
+
+        $content = array(
+            'actualcontent' => 'realstuff'
+        );
         $statusCode = 200;
-        $inputs = array(
-            'limit' => 10,
-            'offset' => 0
-        );
-        $errors = array(
-            'limit' => 'Limit must be a valid integer.',
-            'offset' => 'Limit must be a valid integer.',
-        );
 
-        // Is actual api request?
-        if (Request::header('accept') === 'application/json') {
-            $content = array(
-                'actualcontent' => 'realstuff'
-            );
-            $statusCode = 200;
-        }
-
-        return $this->generateResponse($content, $statusCode, $inputs, $errors);
+        return $this->generateResponse($content, $statusCode);
     }
 
 }
