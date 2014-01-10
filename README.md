@@ -2,6 +2,14 @@
 
 Laravel controller class that allows for output of API docs if the "accept" header is not set to json.
 
+### Set up
+
+Add the following to your app/config/app.php providers array
+
+```php
+'Dwolf555\ApiDocsController\ApiDocsControllerServiceProvider',
+```
+
 ### Example
 
 ```php
